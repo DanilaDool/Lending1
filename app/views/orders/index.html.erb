@@ -1,0 +1,29 @@
+<div class="container buffer-top-large">
+  <h1 class="title-medium">Все заказы</h1>
+
+  <table class="text-center buffer-top">
+    <thead>
+      <tr>
+        <th>ID</th>
+        <th>Имя</th>
+        <th>Email</th>
+        <th>Телефон</th>
+        <th>Адрес</th>
+        <th>Подписка</th>
+      </tr>
+    </thead>
+
+    <tbody>
+      <% @orders.each do |order| %>
+        <tr>
+          <td><%= order.id %></td>
+          <td><%= order.name %></td>
+          <td><%= order.email %></td>
+          <td><%= order.phone %></td>
+          <td><%= order.address %></td>
+          <td><%= '✓ ' if order.subscribe? %></td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+</div>
